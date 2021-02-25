@@ -1,1 +1,1 @@
-alert('web_script.js');
+//alert('web_script.js');

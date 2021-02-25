@@ -24,7 +24,7 @@ var __ViewerOrigin;
 
 window.SetPage = function (url) {
     try {
-        alert(url);
+        //alert(url);
         __ViewerOrigin = getViewerOrigin(url);
         //window.addEventListener("message", onMessage, false);
         var controlAddIn = document.getElementById('controlAddIn');
@@ -34,7 +34,7 @@ window.SetPage = function (url) {
 
         console.log(url);
     } catch (err) {
-        alert('Error: '+err);
+        alert('Error: '+url + ' -  ' + err);
         console.log(err);
     }
 }
