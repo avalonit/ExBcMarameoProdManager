@@ -1,0 +1,38 @@
+{
+  "id": "a8a49c61-7712-400a-9fc5-bc39f8e02af1",
+  "name": "Marameo Production Terminal",
+  "publisher": "Marameo Company",
+  "brief": "Marameo Production Terminal",
+  "description": "Marameo Production Terminal",
+  "version": "3.0.0.16",
+  "privacyStatement": "https://www.marameo-healthcare.com/",
+  "contextSensitiveHelpUrl": "https://www.marameo-healthcare.com/",
+  "EULA": "https://www.marameo-healthcare.com/",
+  "help": "https://www.marameo-healthcare.com/",
+  "url": "https://www.marameo-healthcare.com/",
+  "capabilities": [],
+  "platform": "15.0.0.0",
+  "dependencies": [
+    {
+      "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "1.0.0.0"
+    },
+    {
+      "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "15.0.0.0"
+    }
+  ],  "screenshots": [],
+  "runtime": "4.0",
+  "logo" : "Logo/logo.png",
+  "idRanges": [
+    {
+      "from": 70360199,
+      "to": 70360299
+    }
+  ],
+  "features": [ "TranslationFile" ]
+}
