@@ -15,7 +15,6 @@ page 70360200 "MRM Web Viewer"
             // The control add-in can be placed on the page using usercontrol keyword.
             usercontrol(ControlName; MRMControlAddin)
             {
-
                 ApplicationArea = All;
 
                 trigger OnControlAddInReady()
