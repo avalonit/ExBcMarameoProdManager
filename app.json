@@ -10,7 +10,6 @@
   "EULA": "https://www.marameo-healthcare.com/",
   "help": "https://www.marameo-healthcare.com/",
   "url": "https://www.marameo-healthcare.com/",
-  "capabilities": [],
   "platform": "15.0.0.0",
   "dependencies": [
     {
@@ -25,7 +24,8 @@
       "name": "Base Application",
       "version": "15.0.0.0"
     }
-  ],  "screenshots": [],
+  ],  
+  "screenshots": [],
   "runtime": "4.0",
   "logo" : "Logo/logo.png",
   "idRanges": [
