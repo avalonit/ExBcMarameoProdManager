@@ -8,7 +8,7 @@ window.SetPage = function (url) {
     try {
         //alert(url);
         _origin = getViewerOrigin(url);
-        window.addEventListener("message", onMessage, false);
+        //window.addEventListener("message", onMessage, false);
         var controlAddIn = document.getElementById('controlAddIn');
         controlAddIn.innerHTML = '<iframe id="viewer" style="border-style: none; margin: 0px; padding: 0px; height: 100%; width: 100%" allowFullScreen></iframe>'
         _frame = document.getElementById('viewer');
