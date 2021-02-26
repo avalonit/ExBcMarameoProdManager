@@ -23,13 +23,12 @@ controladdin MRMControlAddin
     Images = 'web/web_logo.png';
 
     // The procedure declarations specify what JavaScript methods could be called from AL.
-    // In main.js code, there should be a global function CallJavaScript(i,s,d,c) {Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnBcPageCallBack', [i, s, d, c]);}
+    // In main.js code, there should be a global function CallJavaScript(s) {Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnBcPageCallBack', [s]);}
     procedure CallJavaScript(s: text);
     // The event declarations specify what callbacks could be raised from JavaScript by using the webclient API:
-    //Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnBcPageCallBack', [1, 'SAMPLE TEXT', 1.1, 'c']);
+    //Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnBcPageCallBack', ['SAMPLE TEXT']);
 
     procedure SetPage(url: Text);
-
     event OnBcPageCallBack(s: text);
     event OnStartup();
     event OnControlAddInReady();
