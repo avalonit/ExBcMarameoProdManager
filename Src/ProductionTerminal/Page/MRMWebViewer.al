@@ -7,7 +7,6 @@ page 70360200 "MRM Web Viewer"
     UsageCategory = Lists;
     ApplicationArea = All;
 
-
     layout
     {
         area(Content)
