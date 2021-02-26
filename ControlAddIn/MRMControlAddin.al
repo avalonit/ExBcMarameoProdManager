@@ -7,8 +7,8 @@ controladdin MRMControlAddin
     HorizontalStretch = true;
     VerticalShrink = true;
     VerticalStretch = true;
-    MinimumWidth = 500;
-    RequestedWidth = 1000;
+    MinimumWidth = 400;
+    //RequestedWidth = 1000;
     //MaximumHeight = 200;
 
 
