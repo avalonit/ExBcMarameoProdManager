@@ -22,17 +22,13 @@ page 70360200 "MRM Web Viewer"
                 begin
                     ControlIsReady := false;
                     InitializePageViewer();
-                end;
-
-                trigger OnPageReady()
-                begin
                     ControlIsReady := true;
                 end;
 
                 // The control add-in events can be handled by defining a trigger with a corresponding name.
-                trigger Callback(s: text)
+                trigger OnBcPageCallBack(s: text)
                 begin
-                    Message('Callback: %1', s);
+                    Message('OnBcPageCallBack: %1', s);
                 end;
 
                 trigger OnStartup()
@@ -51,14 +47,14 @@ page 70360200 "MRM Web Viewer"
     {
         area(Creation)
         {
-            action(CallJavaScript)
+            action("Send a CallBack to BC")
             {
                 ApplicationArea = All;
 
                 trigger OnAction();
                 begin
                     // The control add-in methods can be invoked via a reference to the usercontrol.
-                    CurrPage.ControlName.CallJavaScript('CIAO');
+                    CurrPage.ControlName.CallJavaScript('Invoke JS on client and get it back on Business Central Trigger');
                 end;
             }
         }

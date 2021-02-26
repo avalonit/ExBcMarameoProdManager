@@ -1,36 +1,18 @@
-//Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('CallBack', ['Test'])
-
-//var iframe = window.frameElement;
-
-//iframe.parentElement.style.display = 'flex';
-//iframe.parentElement.style.flexDirection = 'column';
-//iframe.parentElement.style.flexGrow = '1';
-
-//iframe.style.removeProperty('height');
-//iframe.style.removeProperty('max-height');
-//iframe.style.minHeight = '400px';
-
-//iframe.style.flexGrow = '1';
-//iframe.style.flexShrink = '1';
-//iframe.style.flexBasis = 'auto';
-//iframe.style.paddingBottom = '42px';
-
 Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnStartup');
 Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnControlAddInReady', null);
-Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnPageReady', null);
 
-var __ViewerFrame;
-var __ViewerOrigin;
+var _frame;
+var _origin;
 
 window.SetPage = function (url) {
     try {
         //alert(url);
-        __ViewerOrigin = getViewerOrigin(url);
-        //window.addEventListener("message", onMessage, false);
+        _origin = getViewerOrigin(url);
+        window.addEventListener("message", onMessage, false);
         var controlAddIn = document.getElementById('controlAddIn');
         controlAddIn.innerHTML = '<iframe id="viewer" style="border-style: none; margin: 0px; padding: 0px; height: 100%; width: 100%" allowFullScreen></iframe>'
-        __ViewerFrame = document.getElementById('viewer');
-        __ViewerFrame.src = url;
+        _frame = document.getElementById('viewer');
+        _frame.src = url;
 
         console.log(url);
     } catch (err) {
@@ -38,7 +20,6 @@ window.SetPage = function (url) {
         console.log(err);
     }
 }
-
 
 function getViewerOrigin(url) {
     if (isIE()) {
