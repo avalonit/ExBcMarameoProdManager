@@ -6,12 +6,11 @@ var _origin;
 
 window.SetPage = function (url) {
     try {
-        //alert(url);
         _origin = getViewerOrigin(url);
-        var controlAddIn = document.getElementById('controlAddIn');
 
         /*
         IFRAME SOLUTION: DEPRECATED
+        var controlAddIn = document.getElementById('controlAddIn');
         controlAddIn.innerHTML = '<iframe id="viewer" style="border-style: none; margin: 0px; padding: 0px; height: 100%; width: 100%" allowFullScreen></iframe>'
         _frame = document.getElementById('viewer');
         _frame.src = url;
@@ -48,7 +47,7 @@ function DelayedLoadPage(url) {
             }
         }
         ).done(function (data) {
-            $("#controlAddIn").text(data);
+            $("#controlAddIn").html(data);
         });
 
     }
