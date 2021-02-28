@@ -30,11 +30,11 @@ page 70360200 "MRM Web Viewer"
                 end;
 
                 trigger OnStartup()
-                var
-                    webConfig: Record "MRM Web Setup";
+                //var
+                //  webConfig: Record "MRM Web Setup";
                 begin
-                    webConfig.GetRecord();
-                    CurrPage.ControlName.SetPage(webConfig."Web Viewer URL");
+                    //webConfig.GetRecord();
+                    //CurrPage.ControlName.SetPage(webConfig."Web Viewer URL");
                 end;
             }
         }

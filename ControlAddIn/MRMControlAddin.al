@@ -10,8 +10,10 @@ controladdin MRMControlAddin
     //MaximumHeight = 200;
 
     // The Scripts property can reference both external and local scripts.
-    /*Scripts = 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js','web/web_main.js';*/
-    Scripts = 'web/web_script.js';  //LOCAL SCRIPT 
+    //Scripts = 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js'
+    //            , 'web/web_script.js';
+    Scripts = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+        'web/web_script.js';
 
     // The StartupScript is a special script that the web client calls once the page is loaded.
     StartupScript = 'web/web_startup.js';
