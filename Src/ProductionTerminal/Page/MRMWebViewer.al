@@ -45,14 +45,14 @@ page 70360200 "MRM Web Viewer"
     {
         area(Creation)
         {
-            action("CallJavaScript")
+            action("Buchen")
             {
                 ApplicationArea = All;
 
                 trigger OnAction();
                 begin
                     // The control add-in methods can be invoked via a reference to the usercontrol.
-                    CurrPage.ControlName.CallJavaScript('Invoke JS on client and get it back on Business Central Trigger');
+                    CurrPage.ControlName.CallJavaScript('Buchen');
                 end;
             }
         }
