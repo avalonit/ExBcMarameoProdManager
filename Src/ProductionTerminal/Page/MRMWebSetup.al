@@ -15,7 +15,7 @@ page 70360199 "MRM Web Setup"
             {
                 field("Web Viewer URL"; "Web Viewer URL")
                 {
-                    ApplicationArea = Basic;
+                    ApplicationArea = All;
                 }
             }
         }
