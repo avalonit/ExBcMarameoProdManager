@@ -27,12 +27,8 @@ page 70360200 "MRM Web Viewer"
                 // The control add-in events can be handled by defining a trigger with a corresponding name.
                 trigger OnBcRaiseControlAddInEventCallBack(index: Integer; message: Text)
                 var
-                    JsonObject: JsonObject;
-
                 begin
-                    JsonObject.ReadFrom(message);
-
-                    Message('RaiseControlAddIn completed!');
+                    Message('RaiseControlAddIn ' + message);
                 end;
 
                 // The control add-in events can be handled by defining a trigger with a corresponding name.
