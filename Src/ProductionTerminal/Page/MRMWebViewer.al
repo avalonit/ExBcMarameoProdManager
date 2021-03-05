@@ -74,7 +74,7 @@ page 70360200 "MRM Web Viewer"
                     MRMRecord.WorkCenterCode := GetJsonToken(JsonObject, 'WorkCenterCode').AsValue.AsText();
                     MRMRecord.WorkCenterGroupCode := GetJsonToken(JsonObject, 'WorkCenterGroupCode').AsValue.AsText();
                     MRMRecord.Insert(true);
-                    Message('Action completed!');
+                    //Message('Action completed!');
                 end;
 
                 trigger OnStartup()
