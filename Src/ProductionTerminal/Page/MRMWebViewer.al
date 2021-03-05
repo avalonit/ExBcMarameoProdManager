@@ -29,6 +29,7 @@ page 70360200 "MRM Web Viewer"
                 var
                 begin
                     Message('RaiseControlAddIn ' + message);
+                    //LOGIC OF NAV->MIGRATED
                 end;
 
                 // The control add-in events can be handled by defining a trigger with a corresponding name.

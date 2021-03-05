@@ -24,9 +24,7 @@ window.SetPage = function (url) {
 }
 
 function LoadPage(url) {
-
     try {
-      
         setTimeout(function () {
             DelayedInitController(url);
         }, 1000);
@@ -34,11 +32,9 @@ function LoadPage(url) {
     catch (err) {
         alert('LoadPage ' + err);
     }
-
 }
 
 function DelayedInitController(url) {
-
     try {
         $.ajax({
             url: url,
@@ -50,12 +46,10 @@ function DelayedInitController(url) {
             $("#controlAddIn").html(data);
             InitController();
         });
-
     }
     catch (err) {
         alert('DelayedInitController ' + err);
     }
-
 }
 
 function getViewerOrigin(url) {
