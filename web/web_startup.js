@@ -26,16 +26,7 @@ window.SetPage = function (url) {
 function LoadPage(url) {
 
     try {
-        $.ajax({
-            url: url,
-            xhrFields: {
-                withCredentials: true
-            }
-        }
-        ).done(function (data) {
-            $("#controlAddIn").html(data);
-        });
-
+      
         setTimeout(function () {
             DelayedInitController(url);
         }, 1000);
@@ -49,7 +40,17 @@ function LoadPage(url) {
 function DelayedInitController(url) {
 
     try {
-        InitController();
+        $.ajax({
+            url: url,
+            xhrFields: {
+                withCredentials: true
+            }
+        }
+        ).done(function (data) {
+            $("#controlAddIn").html(data);
+            InitController();
+        });
+
     }
     catch (err) {
         alert('DelayedInitController ' + err);
