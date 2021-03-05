@@ -16,7 +16,6 @@ window.SetPage = function (url) {
         _frame.src = url;
         */
         LoadPage(url);
-
         console.log(url);
     } catch (err) {
         alert('Error: ' + url + ' -  ' + err);
@@ -25,19 +24,6 @@ window.SetPage = function (url) {
 }
 
 function LoadPage(url) {
-
-    try {
-        setTimeout(function () {
-            DelayedLoadPage(url);
-        }, 1000);
-    }
-    catch (err) {
-        alert(err);
-    }
-
-}
-
-function DelayedLoadPage(url) {
 
     try {
         $.ajax({
@@ -50,9 +36,23 @@ function DelayedLoadPage(url) {
             $("#controlAddIn").html(data);
         });
 
+        setTimeout(function () {
+            DelayedInitController(url);
+        }, 1000);
     }
     catch (err) {
-        alert(err);
+        alert('LoadPage ' + err);
+    }
+
+}
+
+function DelayedInitController(url) {
+
+    try {
+        InitController();
+    }
+    catch (err) {
+        alert('DelayedInitController ' + err);
     }
 
 }
