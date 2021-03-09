@@ -39,40 +39,40 @@ page 70360200 "MRM Web Viewer"
                     MRMRecord: Record "MRM Prod View Model";
                 begin
                     MRMRecord.Init();
-                    MRMRecord.Action := GetJsonToken(JsonObject, 'Action').AsValue.AsText();
-                    MRMRecord.ChangeMachineCommand := GetJsonToken(JsonObject, 'ChangeMachineCommand').AsValue.AsText();
-                    MRMRecord.ChangeUserCommand := GetJsonToken(JsonObject, 'ChangeUserCommand').AsValue.AsText();
-                    MRMRecord.Description := GetJsonToken(JsonObject, 'Description').AsValue.AsText();
-                    MRMRecord.EndIdleCommand := GetJsonToken(JsonObject, 'EndIdleCommand').AsValue.AsText();
-                    MRMRecord.EndProcessingCommand := GetJsonToken(JsonObject, 'EndProcessingCommand').AsValue.AsText();
-                    MRMRecord.EndSetupCommand := GetJsonToken(JsonObject, 'EndSetupCommand').AsValue.AsText();
-                    MRMRecord.Finish := GetJsonToken(JsonObject, 'Finish').AsValue.AsText();
-                    MRMRecord.FinishButtonCommand := GetJsonToken(JsonObject, 'FinishButtonCommand').AsValue.AsText();
-                    MRMRecord.FinishedQuantity := GetJsonToken(JsonObject, 'FinishedQuantity').AsValue.AsText();
-                    MRMRecord.IdleCode := GetJsonToken(JsonObject, 'IdleCode').AsValue.AsText();
-                    MRMRecord.IdleTime := GetJsonToken(JsonObject, 'IdleTime').AsValue.AsText();
-                    MRMRecord.MachineNo := GetJsonToken(JsonObject, 'MachineNo').AsValue.AsText();
-                    MRMRecord.MachineType := GetJsonToken(JsonObject, 'MachineType').AsValue.AsText();
-                    MRMRecord.OperationNo := GetJsonToken(JsonObject, 'OperationNo').AsValue.AsText();
-                    MRMRecord.Output := GetJsonToken(JsonObject, 'Output').AsValue.AsText();
-                    MRMRecord.OutPutButtonCommand := GetJsonToken(JsonObject, 'OutPutButtonCommand').AsValue.AsText();
-                    MRMRecord.PostCommand := GetJsonToken(JsonObject, 'PostCommand').AsValue.AsText();
-                    MRMRecord.ProcessingTime := GetJsonToken(JsonObject, 'ProcessingTime').AsValue.AsText();
-                    MRMRecord.ProdOrderNo := GetJsonToken(JsonObject, 'ProdOrderNo').AsValue.AsText();
-                    MRMRecord.RequiredActionType := GetJsonToken(JsonObject, 'RequiredActionType').AsValue.AsText();
-                    MRMRecord.ScrapButtonCommand := GetJsonToken(JsonObject, 'ScrapButtonCommand').AsValue.AsText();
-                    MRMRecord.ScrapQuantity := GetJsonToken(JsonObject, 'ScrapQuantity').AsValue.AsText();
-                    MRMRecord.SelectedInput := GetJsonToken(JsonObject, 'SelectedInput').AsValue.AsText();
-                    MRMRecord.SeperatorCode := GetJsonToken(JsonObject, 'SeperatorCode').AsValue.AsText();
-                    MRMRecord.SetupTime := GetJsonToken(JsonObject, 'SetupTime').AsValue.AsText();
-                    MRMRecord.SkipOperationCommand := GetJsonToken(JsonObject, 'SkipOperationCommand').AsValue.AsText();
-                    MRMRecord.StartIdleCommand := GetJsonToken(JsonObject, 'StartIdleCommand').AsValue.AsText();
-                    MRMRecord.StartProcessingCommand := GetJsonToken(JsonObject, 'StartProcessingCommand').AsValue.AsText();
-                    MRMRecord.StartSetupCommand := GetJsonToken(JsonObject, 'StartSetupCommand').AsValue.AsText();
-                    MRMRecord.Status := GetJsonToken(JsonObject, 'Status').AsValue.AsText();
-                    MRMRecord.User := GetJsonToken(JsonObject, 'User').AsValue.AsText();
-                    MRMRecord.WorkCenterCode := GetJsonToken(JsonObject, 'WorkCenterCode').AsValue.AsText();
-                    MRMRecord.WorkCenterGroupCode := GetJsonToken(JsonObject, 'WorkCenterGroupCode').AsValue.AsText();
+                    MRMRecord.Action := GetJsonValue(JsonObject, 'Action');
+                    MRMRecord.ChangeMachineCommand := GetJsonValue(JsonObject, 'ChangeMachineCommand');
+                    MRMRecord.ChangeUserCommand := GetJsonValue(JsonObject, 'ChangeUserCommand');
+                    MRMRecord.Description := GetJsonValue(JsonObject, 'Description');
+                    MRMRecord.EndIdleCommand := GetJsonValue(JsonObject, 'EndIdleCommand');
+                    MRMRecord.EndProcessingCommand := GetJsonValue(JsonObject, 'EndProcessingCommand');
+                    MRMRecord.EndSetupCommand := GetJsonValue(JsonObject, 'EndSetupCommand');
+                    MRMRecord.Finish := GetJsonValue(JsonObject, 'Finish');
+                    MRMRecord.FinishButtonCommand := GetJsonValue(JsonObject, 'FinishButtonCommand');
+                    MRMRecord.FinishedQuantity := GetJsonValue(JsonObject, 'FinishedQuantity');
+                    MRMRecord.IdleCode := GetJsonValue(JsonObject, 'IdleCode');
+                    MRMRecord.IdleTime := GetJsonValue(JsonObject, 'IdleTime');
+                    MRMRecord.MachineNo := GetJsonValue(JsonObject, 'MachineNo');
+                    MRMRecord.MachineType := GetJsonValue(JsonObject, 'MachineType');
+                    MRMRecord.OperationNo := GetJsonValue(JsonObject, 'OperationNo');
+                    MRMRecord.Output := GetJsonValue(JsonObject, 'Output');
+                    MRMRecord.OutPutButtonCommand := GetJsonValue(JsonObject, 'OutPutButtonCommand');
+                    MRMRecord.PostCommand := GetJsonValue(JsonObject, 'PostCommand');
+                    MRMRecord.ProcessingTime := GetJsonValue(JsonObject, 'ProcessingTime');
+                    MRMRecord.ProdOrderNo := GetJsonValue(JsonObject, 'ProdOrderNo');
+                    MRMRecord.RequiredActionType := GetJsonValue(JsonObject, 'RequiredActionType');
+                    MRMRecord.ScrapButtonCommand := GetJsonValue(JsonObject, 'ScrapButtonCommand');
+                    MRMRecord.ScrapQuantity := GetJsonValue(JsonObject, 'ScrapQuantity');
+                    MRMRecord.SelectedInput := GetJsonValue(JsonObject, 'SelectedInput');
+                    MRMRecord.SeperatorCode := GetJsonValue(JsonObject, 'SeperatorCode');
+                    MRMRecord.SetupTime := GetJsonValue(JsonObject, 'SetupTime');
+                    MRMRecord.SkipOperationCommand := GetJsonValue(JsonObject, 'SkipOperationCommand');
+                    MRMRecord.StartIdleCommand := GetJsonValue(JsonObject, 'StartIdleCommand');
+                    MRMRecord.StartProcessingCommand := GetJsonValue(JsonObject, 'StartProcessingCommand');
+                    MRMRecord.StartSetupCommand := GetJsonValue(JsonObject, 'StartSetupCommand');
+                    MRMRecord.Status := GetJsonValue(JsonObject, 'Status');
+                    MRMRecord.User := GetJsonValue(JsonObject, 'User');
+                    MRMRecord.WorkCenterCode := GetJsonValue(JsonObject, 'WorkCenterCode');
+                    MRMRecord.WorkCenterGroupCode := GetJsonValue(JsonObject, 'WorkCenterGroupCode');
                     MRMRecord.Insert(true);
                     //Message('Action completed!');
                 end;
@@ -119,13 +119,23 @@ page 70360200 "MRM Web Viewer"
             Error('Could not find a token with key %1', TokenKey);
     end;
 
+    procedure GetJsonValue(JsonObject: JsonObject; TokenKey: text): Text
+    var
+        JsonToken: JsonToken;
+    begin
+        if not JsonObject.Get(TokenKey, JsonToken) then begin
+            exit('')
+        end;
+        exit(GetJsonToken(JsonObject, TokenKey).AsValue.AsText());
+    end;
+
     local procedure PostControlAddInEventDummy()
     var
         prodAddins: Record "MRM Prod Addins";
         prodAddinsJson: JsonObject;
-        prodAddinsJsonTxt: Text[250];
+        prodAddinsJsonTxt: Text;
     begin
-        prodAddins.Get();
+        prodAddins.FindFirst();
         prodAddinsJson.Add('Action', prodAddins.Action);
         prodAddinsJson.Add('Description', prodAddins.Description);
         prodAddinsJson.Add('MachineNo', prodAddins.MachineNo);
