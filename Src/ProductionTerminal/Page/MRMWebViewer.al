@@ -38,7 +38,6 @@ page 70360200 "MRM Web Viewer"
                     JsonObject: JsonObject;
                     MRMRecord: Record "MRM Prod View Model";
                 begin
-                    JsonObject.ReadFrom(JsonText);
                     MRMRecord.Init();
                     MRMRecord.Action := GetJsonToken(JsonObject, 'Action').AsValue.AsText();
                     MRMRecord.ChangeMachineCommand := GetJsonToken(JsonObject, 'ChangeMachineCommand').AsValue.AsText();
@@ -78,13 +77,6 @@ page 70360200 "MRM Web Viewer"
                     //Message('Action completed!');
                 end;
 
-                trigger OnStartup()
-                //var
-                //  webConfig: Record "MRM Web Setup";
-                begin
-                    //webConfig.GetRecord();
-                    //CurrPage.ControlName.SetPage(webConfig."Web Viewer URL");
-                end;
 
             }
 
@@ -97,14 +89,13 @@ page 70360200 "MRM Web Viewer"
     {
         area(Creation)
         {
-            action("Buchen")
+            action("PostControlAddInEvent")
             {
                 ApplicationArea = All;
 
                 trigger OnAction();
                 begin
-                    // The control add-in methods can be invoked via a reference to the usercontrol.
-                    CurrPage.ControlName.CallJavaScript('Buchen');
+                    PostControlAddInEventDummy();
                 end;
             }
         }
@@ -126,5 +117,53 @@ page 70360200 "MRM Web Viewer"
     begin
         if not JsonObject.Get(TokenKey, JsonToken) then
             Error('Could not find a token with key %1', TokenKey);
+    end;
+
+    local procedure PostControlAddInEventDummy()
+    var
+        prodAddins: Record "MRM Prod Addins";
+        prodAddinsJson: JsonObject;
+        prodAddinsJsonTxt: Text[250];
+    begin
+        prodAddins.Get();
+        prodAddinsJson.Add('Action', prodAddins.Action);
+        prodAddinsJson.Add('Description', prodAddins.Description);
+        prodAddinsJson.Add('MachineNo', prodAddins.MachineNo);
+        prodAddinsJson.Add('MachineType', prodAddins.MachineType);
+        prodAddinsJson.Add('OperationNo', prodAddins.OperationNo);
+        prodAddinsJson.Add('Output', prodAddins.Output);
+        prodAddinsJson.Add('ProdOrderNo', prodAddins.ProdOrderNo);
+        prodAddinsJson.Add('Status', prodAddins.Status);
+        prodAddinsJson.Add('User', prodAddins.User);
+        prodAddinsJson.Add('Finish', prodAddins.Finish);
+        prodAddinsJson.Add('ProcessingTime', prodAddins.ProcessingTime);
+        prodAddinsJson.Add('SetupTime', prodAddins.SetupTime);
+        prodAddinsJson.Add('IdleTime', prodAddins.IdleTime);
+        prodAddinsJson.Add('IdleCode', prodAddins.IdleCode);
+        prodAddinsJson.Add('FinishedQuantity', prodAddins.FinishedQuantity);
+        prodAddinsJson.Add('ScrapQuantity', prodAddins.ScrapQuantity);
+        prodAddinsJson.Add('RequiredActionType', prodAddins.RequiredActionType);
+        prodAddinsJson.Add('SelectedInput', prodAddins.SelectedInput);
+        prodAddinsJson.Add('WorkCenterCode', prodAddins.WorkCenterCode);
+        prodAddinsJson.Add('WorkCenterGroupCode', prodAddins.WorkCenterGroupCode);
+
+        prodAddinsJson.Add('SeperatorCode', prodAddins.SeperatorCode);
+        prodAddinsJson.Add('StartProcessingCommand', prodAddins.StartProcessingCommand);
+        prodAddinsJson.Add('EndProcessingCommand', prodAddins.EndProcessingCommand);
+        prodAddinsJson.Add('StartSetupCommand', prodAddins.StartSetupCommand);
+        prodAddinsJson.Add('EndSetupCommand', prodAddins.EndSetupCommand);
+        prodAddinsJson.Add('StartIdleCommand', prodAddins.StartIdleCommand);
+
+        prodAddinsJson.Add('EndIdleCommand', prodAddins.EndIdleCommand);
+        prodAddinsJson.Add('PostCommand', prodAddins.PostCommand);
+        prodAddinsJson.Add('SkipOperationCommand', prodAddins.SkipOperationCommand);
+        prodAddinsJson.Add('ChangeUserCommand', prodAddins.ChangeUserCommand);
+        prodAddinsJson.Add('ChangeMachineCommand', prodAddins.ChangeMachineCommand);
+
+        prodAddinsJson.Add('OutPutButtonCommand', prodAddins.OutPutButtonCommand);
+        prodAddinsJson.Add('ScrapButtonCommand', prodAddins.ScrapButtonCommand);
+
+        prodAddinsJson.WriteTo(prodAddinsJsonTxt);
+        CurrPage.ControlName.PostControlAddInEvent(prodAddinsJsonTxt);
     end;
 }

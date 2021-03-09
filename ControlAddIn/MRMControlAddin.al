@@ -27,6 +27,7 @@ controladdin MRMControlAddin
     // The procedure declarations specify what JavaScript methods could be called from AL.
     // In main.js code, there should be a global function CallJavaScript(s) {Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('OnBcPageCallBack', [s]);}
     procedure CallJavaScript(s: text);
+    procedure PostControlAddInEvent(message: text);
     procedure RaiseControlAddInEvent(index: integer; message: text);
 
     // The event declarations specify what callbacks could be raised from JavaScript by using the webclient API:

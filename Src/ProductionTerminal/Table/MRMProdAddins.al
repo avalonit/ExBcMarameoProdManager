@@ -1,9 +1,9 @@
-table 70360200 "MRM Prod View Model"
+table 70360201 "MRM Prod Addins"
 {
     DataPerCompany = false;
     DataClassification = CustomerContent;
-    LookupPageId = "MRM Prod View Model";
-    DrillDownPageId = "MRM Prod View Model";
+    LookupPageId = "MRM Prod Addins";
+    DrillDownPageId = "MRM Prod Addins";
 
     fields
     {
