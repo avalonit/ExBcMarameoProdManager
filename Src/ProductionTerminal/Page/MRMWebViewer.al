@@ -38,6 +38,7 @@ page 70360200 "MRM Web Viewer"
                     JsonObject: JsonObject;
                     MRMRecord: Record "MRM Prod View Model";
                 begin
+                    JsonObject.ReadFrom(JsonText);
                     MRMRecord.Init();
                     MRMRecord.Action := GetJsonValue(JsonObject, 'Action');
                     MRMRecord.ChangeMachineCommand := GetJsonValue(JsonObject, 'ChangeMachineCommand');
