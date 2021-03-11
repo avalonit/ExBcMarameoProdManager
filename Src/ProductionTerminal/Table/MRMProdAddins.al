@@ -152,6 +152,7 @@ table 70360201 "MRM Prod Addins"
         {
             DataClassification = CustomerContent;
         }
+
     }
 
     trigger OnInsert()

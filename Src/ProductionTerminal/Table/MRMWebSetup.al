@@ -14,6 +14,7 @@ table 70360199 "MRM Web Setup"
         field(2; "Web Viewer URL"; Text[250])
         {
             DataClassification = CustomerContent;
+            Description = 'Web Viewer URL';
         }
     }
 

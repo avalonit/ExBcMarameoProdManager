@@ -28,7 +28,7 @@ page 70360200 "MRM Web Viewer"
                 trigger OnBcRaiseControlAddInEventCallBack(index: Integer; message: Text)
                 var
                 begin
-                    Message('RaiseControlAddIn ' + message);
+                    Message('RaiseControlAddIn: ' + message);
                     //LOGIC OF NAV->MIGRATED
                 end;
 
@@ -74,6 +74,7 @@ page 70360200 "MRM Web Viewer"
                     MRMRecord.User := GetJsonValue(JsonObject, 'User');
                     MRMRecord.WorkCenterCode := GetJsonValue(JsonObject, 'WorkCenterCode');
                     MRMRecord.WorkCenterGroupCode := GetJsonValue(JsonObject, 'WorkCenterGroupCode');
+                    MRMRecord.DateEventInsert := CURRENTDATETIME;
                     MRMRecord.Insert(true);
                     //Message('Action completed!');
                 end;
