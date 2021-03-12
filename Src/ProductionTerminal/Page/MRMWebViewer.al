@@ -136,7 +136,21 @@ page 70360200 "MRM Web Viewer"
         prodAddins: Record "MRM Prod Addins";
         prodAddinsJson: JsonObject;
         prodAddinsJsonTxt: Text;
+
+        Options: Text[250];
+        Selected: Integer;
+        ActionType: Text;
+        Text000: Label '0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16';
+        Text001: Label 'You selected option %1.';
+        Text002: Label 'Select one of the following ActionType:';
     begin
+
+        Options := Text000;
+        Selected := Dialog.StrMenu(Options, 1, Text002);
+        ActionType := Format(Selected - 1);
+
+        prodAddins.Init();
+        prodAddins.SETFILTER("RequiredActionType", ActionType);
         prodAddins.FindFirst();
         prodAddinsJson.Add('Action', prodAddins.Action);
         prodAddinsJson.Add('Description', prodAddins.Description);
