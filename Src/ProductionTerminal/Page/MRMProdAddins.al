@@ -247,47 +247,57 @@ page 70360202 "MRM Prod Addins"
     local procedure ActionType_Init_Insert()
     var
         prodAddins: Record "MRM Prod Addins";
+        Options: Text[250];
+        Selected: Integer;
+        ActionType: Text;
+        Text000: Label '0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16';
+        Text001: Label 'You selected option %1.';
+        Text002: Label 'Create one of the following ActionType:';
     begin
+
+        Options := Text000;
+        Selected := Dialog.StrMenu(Options, 1, Text002);
+        ActionType := Format(Selected - 1);
         prodAddins.Init();
-        prodAddins.Action := '';
-        prodAddins.Description := '';
-        prodAddins.MachineNo := '';
-        prodAddins.MachineType := '';
-        prodAddins.OperationNo := '';
-        prodAddins.Output := '';
-        prodAddins.ProdOrderNo := '';
-        prodAddins.Status := '';
-        prodAddins.User := '';
-        prodAddins.Finish := '';
-        prodAddins.ProcessingTime := '';
-        prodAddins.SetupTime := '';
-        prodAddins.IdleTime := '';
-        prodAddins.IdleCode := '';
-        prodAddins.FinishedQuantity := '';
-        prodAddins.ScrapQuantity := '';
-        prodAddins.RequiredActionType := '';
-        prodAddins.SelectedInput := '';
-        prodAddins.WorkCenterCode := '';
-        prodAddins.WorkCenterGroupCode := '';
+        prodAddins.Action := 'ACTION ' + ActionType;
+        prodAddins.Description := 'DESCRIPTION ' + ActionType;
+        prodAddins.MachineNo := 'MACH.NO. ' + ActionType;
+        prodAddins.MachineType := 'MACH. TYPE ' + ActionType;
+        prodAddins.OperationNo := 'OP.NO ' + ActionType;
+        prodAddins.Output := 'OUTPUT ' + ActionType;
+        prodAddins.ProdOrderNo := 'PROD ORD NO ' + ActionType;
+        prodAddins.Status := 'STATUS ' + ActionType;
+        prodAddins.User := 'USER ' + ActionType;
+        prodAddins.Finish := 'FINISH ' + ActionType;
+        prodAddins.ProcessingTime := '01';
+        prodAddins.SetupTime := '02';
+        prodAddins.IdleTime := '03';
+        prodAddins.IdleCode := '04';
+        prodAddins.FinishedQuantity := '11';
+        prodAddins.ScrapQuantity := '12';
+        prodAddins.RequiredActionType := ActionType;
+        prodAddins.SelectedInput := 'SEL INPUT ' + ActionType;
+        prodAddins.WorkCenterCode := 'WORK CENT. ' + ActionType;
+        prodAddins.WorkCenterGroupCode := 'WORK CENT. GRP.' + ActionType;
 
-        prodAddins.SeperatorCode := '';
-        prodAddins.StartProcessingCommand := '';
-        prodAddins.EndProcessingCommand := '';
-        prodAddins.StartSetupCommand := '';
-        prodAddins.EndSetupCommand := '';
-        prodAddins.StartIdleCommand := '';
+        prodAddins.SeperatorCode := '-';
+        prodAddins.StartProcessingCommand := 'StartProcessingCommand';
+        prodAddins.EndProcessingCommand := 'EndProcessingCommand';
+        prodAddins.StartSetupCommand := 'StartSetupCommand';
+        prodAddins.EndSetupCommand := 'EndSetupCommand';
+        prodAddins.StartIdleCommand := 'StartIdleCommand';
 
-        prodAddins.EndIdleCommand := '';
-        prodAddins.PostCommand := '';
-        prodAddins.SkipOperationCommand := '';
-        prodAddins.ChangeUserCommand := '';
-        prodAddins.ChangeMachineCommand := '';
+        prodAddins.EndIdleCommand := 'EndIdleCommand';
+        prodAddins.PostCommand := 'PostCommand';
+        prodAddins.SkipOperationCommand := 'SkipOperationCommand';
+        prodAddins.ChangeUserCommand := 'ChangeUserCommand';
+        prodAddins.ChangeMachineCommand := 'ChangeMachineCommand';
 
-        prodAddins.OutPutButtonCommand := '';
-        prodAddins.ScrapButtonCommand := '';
+        prodAddins.OutPutButtonCommand := 'OutPutButtonCommand';
+        prodAddins.ScrapButtonCommand := 'ScrapButtonCommand';
 
         prodAddins.Insert(true);
-        //Message('Action completed!');
+        Message('Record inserted!');
     end;
 
 }
