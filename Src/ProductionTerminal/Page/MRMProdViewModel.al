@@ -220,6 +220,12 @@ page 70360201 "MRM Prod View Model"
                     Caption = 'Selected Input';
                     ToolTip = 'Selected Input';
                 }
+                field(DateEventInsert; Rec.DateEventInsert)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Date Event Insert';
+                    ToolTip = 'Date Event Insert';
+                }
             }
         }
         area(Factboxes)
